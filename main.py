@@ -48,7 +48,8 @@ def shortestWay(start, end, mode = "walk", optimizer="time"):
     m = ox.plot_route_folium(graph, shortest_way)
     folium.Marker(location=start, icon=folium.Icon(color="red")).add_to(m)
     folium.Marker(location=end, icon=folium.Icon(color="blue")).add_to(m)
-    return m.get_root().render()
+    ret = clearMap(m)
+    return ret
 
 @app.route("/test", methods=["GET", "POST"])
 def test():
