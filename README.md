@@ -1,4 +1,6 @@
 # more.techSKR
+код в ветке master
+
 Для запуска требуется выполнить следующие команды:</br>
 pip install flask</br>
 pip install folium</br>
