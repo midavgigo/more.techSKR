@@ -1,6 +1,5 @@
 import json
 import folium
-import math
 import geopy.distance
 from math import cos, sin, radians
 
@@ -34,7 +33,7 @@ class DataReader:
                         break
                 if skip:
                     continue
-                ret.append(folium.Marker(location=[x, y], popup=i["address"]))
+                ret.append(folium.Marker(location=[x, y], popup='<p>'+i['address']+f'<\p><form method="post" action="/" enctype = "multipart/form-data"><input type="hidden" value="{x} {y} {userAddress[0]} {userAddress[1]}" name="coords"><input name="check" type="submit" value="Составить маршрут"></form>'))
         return ret
     
     def hoursToSeg(st):
